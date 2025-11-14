@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'word_list.dart';
+import '../data/word_list.dart';
 import 'dart:async';
 
 class GameScreen extends StatefulWidget {
