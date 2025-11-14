@@ -42,24 +42,27 @@ class _BodyContainerState extends State<BodyContainer> {
           ),
           TextButton(
             onPressed: () => context.read<CounterProvider>().reset(),
-            child: Text("Reset ", style: TextStyle(fontSize: 10,decoration: TextDecoration.underline,color: Colors.black)),
+            child: Text(
+              "Reset ",
+              style: TextStyle(
+                fontSize: 10,
+                decoration: TextDecoration.underline,
+                color: Colors.black,
+              ),
+            ),
           ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                ),
+                style: ElevatedButton.styleFrom(foregroundColor: Colors.black),
                 onPressed: () => context.read<CounterProvider>().decrement(),
                 child: Text(" - ", style: TextStyle(fontSize: 20)),
               ),
-          
+
               ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black,
-                ),
+                style: ElevatedButton.styleFrom(foregroundColor: Colors.black),
                 onPressed: () => context.read<CounterProvider>().increment(),
                 child: Text(" + ", style: TextStyle(fontSize: 20)),
               ),
