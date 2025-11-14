@@ -25,8 +25,14 @@ A basic Flutter app demonstrating **StatefulWidget** and `setState()` for updati
 📄 Includes its own README.md.
 
 ---
+### 2️⃣ Quiz App 
 
-### 2️⃣ Expense Tracker App  
+A simple and interactive quiz application built using Flutter.
+Helps in understanding screen navigation, state management, custom widgets, dynamic question loading, and UI styling with gradients.
+📁 Folder: quiz_app
+📄 Includes a detailed README.md with full explanation, project structure, and setup instructions.`
+---
+### 3️⃣ Expense Tracker App  
 A beginner-friendly app to track daily expenses.  
 Helps understand **UI building, lists, models, and state handling**.  
 📁 Folder: [`expense_tracker_app`](./expense_tracker_app)  
