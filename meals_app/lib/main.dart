@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meals_app/views/categories_view.dart';
-import 'package:meals_app/views/landing_view.dart';
+import 'package:meals_app/views/categories_views.dart';
 
-// final theme = ThemeData(
-//   // useMaterial3: true,
-//   colorScheme: ColorScheme.fromSeed(
-//     seedColor: const Color.fromARGB(255, 131, 57, 0),
-//   ),
-//   textTheme: GoogleFonts.latoTextTheme(),
-// );
-
-var kColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 184, 93, 24),
-);
-
-var kDarkColorScheme = ColorScheme.fromSeed(
-  seedColor: const Color.fromARGB(255, 250, 194, 110),
+final theme = ThemeData(
+  useMaterial3: true,
+  colorScheme: ColorScheme.fromSeed(
+    brightness: Brightness.dark,
+    seedColor: const Color.fromARGB(255, 131, 57, 0),
+  ),
+  textTheme: GoogleFonts.latoTextTheme(),
 );
 
 void main() {
@@ -29,21 +21,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Meals App',
-      darkTheme: ThemeData.dark().copyWith(
-        colorScheme: kDarkColorScheme,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.transparent,
-          foregroundColor: Colors.white,
-        ),
-        textTheme: GoogleFonts.latoTextTheme(),
-      ),
-      theme: ThemeData().copyWith(
-        colorScheme: kColorScheme,
-        appBarTheme: AppBarTheme(backgroundColor: Colors.transparent),
-        textTheme: GoogleFonts.latoTextTheme(),
-      ),
-      home: const LandingScreen(),
+      theme: theme,
+      home: CategoriesScreen()
     );
   }
 }
