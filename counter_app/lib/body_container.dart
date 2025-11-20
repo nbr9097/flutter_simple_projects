@@ -15,20 +15,20 @@ class _BodyContainerState extends State<BodyContainer> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Counter App'),
-        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         backgroundColor: const Color.fromARGB(255, 146, 146, 146),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(padding: const EdgeInsets.fromLTRB(20, 250, 20, 10)),
           Text(
-            'Counter Display',
+            'Counter',
             style: TextStyle(
               fontSize: 25,
               color: const Color.fromARGB(255, 0, 0, 0),
             ),
           ),
-          SizedBox(height: 50),
+          // SizedBox(height: 50),
           Consumer<CounterProvider>(
             builder: (context, value, child) {
               return Text(
@@ -40,38 +40,33 @@ class _BodyContainerState extends State<BodyContainer> {
               );
             },
           ),
-          Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(bottom:300),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: () =>
-                      context.read<CounterProvider>().decrement(),
-                  child: Text(" - ", style: TextStyle(fontSize: 50)),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: () =>
-                      context.read<CounterProvider>().reset(),
-                  child: Text(" Reset ", style: TextStyle(fontSize: 30)),
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: () =>
-                      context.read<CounterProvider>().increment(),
-                  child: Text(" + ", style: TextStyle(fontSize: 50)),
-                ),
-              ],
+          TextButton(
+            onPressed: () => context.read<CounterProvider>().reset(),
+            child: Text(
+              "Reset ",
+              style: TextStyle(
+                fontSize: 10,
+                decoration: TextDecoration.underline,
+                color: Colors.black,
+              ),
             ),
+          ),
+          SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(foregroundColor: Colors.black),
+                onPressed: () => context.read<CounterProvider>().decrement(),
+                child: Text(" - ", style: TextStyle(fontSize: 20)),
+              ),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(foregroundColor: Colors.black),
+                onPressed: () => context.read<CounterProvider>().increment(),
+                child: Text(" + ", style: TextStyle(fontSize: 20)),
+              ),
+            ],
           ),
         ],
       ),
